@@ -35,4 +35,4 @@ This project utilizes **MobileNetV2**, a lightweight and highly efficient convol
 - **No User Accounts**: There is no day-by-day tracking or history logging in this version.
 
 ## Live Demo
-Check out the live application here: **[Insert Deployment Link Here]**
+Check out the live application here: **[https://plate-wise.streamlit.app/]**
