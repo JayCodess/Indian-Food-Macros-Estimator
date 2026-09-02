@@ -12,8 +12,8 @@ This project utilizes **MobileNetV2**, a lightweight and highly efficient convol
 **Why transfer learning?** Instead of training a CNN from scratch on only ~4,000 images—which would likely lead to severe overfitting and poor generalization—we leveraged the feature extraction capabilities of a model pre-trained on the massive ImageNet dataset. We froze the base layers and fine-tuned a custom classification head to recognize our 80 specific Indian food classes. MobileNetV2 was chosen specifically for its speed and low parameter count, making it ideal for free-tier cloud deployment.
 
 ## Model Performance
-- **Top-1 Accuracy**: 42.13%
-- **Top-3 Accuracy**: 64.75%
+- **Top-1 Accuracy**: 64.62%
+- **Top-3 Accuracy**: 85.62%
 
 *(Note: Top-3 accuracy is a much fairer metric for this task, as many Indian dishes (e.g., Paneer Butter Masala vs. Chicken Tikka Masala, or different types of Dal) look visually identical even to humans.)*
 
