@@ -1,0 +1,642 @@
+{
+    "adhirasam": {
+        "dish_name": "adhirasam",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "aloo_gobi": {
+        "dish_name": "aloo gobi",
+        "unit_type": "weight",
+        "calories": 167,
+        "protein_g": 0.0,
+        "carbs_g": 33.3,
+        "fat_g": 0.0
+    },
+    "aloo_matar": {
+        "dish_name": "aloo matar",
+        "unit_type": "weight",
+        "calories": 100,
+        "protein_g": 2.67,
+        "carbs_g": 12.7,
+        "fat_g": 1.33
+    },
+    "aloo_methi": {
+        "dish_name": "aloo methi",
+        "unit_type": "weight",
+        "calories": 327,
+        "protein_g": 27.3,
+        "carbs_g": 54.6,
+        "fat_g": 1.82
+    },
+    "aloo_shimla_mirch": {
+        "dish_name": "aloo shimla mirch",
+        "unit_type": "weight",
+        "calories": 100,
+        "protein_g": 2.67,
+        "carbs_g": 12.7,
+        "fat_g": 1.33
+    },
+    "aloo_tikki": {
+        "dish_name": "aloo tikki",
+        "unit_type": "weight",
+        "calories": 100,
+        "protein_g": 2.67,
+        "carbs_g": 12.7,
+        "fat_g": 1.33
+    },
+    "anarsa": {
+        "dish_name": "anarsa",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "ariselu": {
+        "dish_name": "ariselu",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "bandar_laddu": {
+        "dish_name": "bandar laddu",
+        "unit_type": "weight",
+        "calories": 500,
+        "protein_g": 3.57,
+        "carbs_g": 71.4,
+        "fat_g": 10.0
+    },
+    "basundi": {
+        "dish_name": "basundi",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "bhatura": {
+        "dish_name": "bhatura",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "bhindi_masala": {
+        "dish_name": "bhindi masala",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "biryani": {
+        "dish_name": "biryani",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "boondi": {
+        "dish_name": "boondi",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "butter_chicken": {
+        "dish_name": "butter chicken",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "chak_hao_kheer": {
+        "dish_name": "chak hao kheer",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "cham_cham": {
+        "dish_name": "cham cham",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "chana_masala": {
+        "dish_name": "chana masala",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "chapati": {
+        "dish_name": "chapati",
+        "unit_type": "count",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "chhena_kheeri": {
+        "dish_name": "chhena kheeri",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "chicken_razala": {
+        "dish_name": "chicken razala",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "chicken_tikka": {
+        "dish_name": "chicken tikka",
+        "unit_type": "count",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "chicken_tikka_masala": {
+        "dish_name": "chicken tikka masala",
+        "unit_type": "count",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "chikki": {
+        "dish_name": "chikki",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "daal_baati_churma": {
+        "dish_name": "daal baati churma",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "daal_puri": {
+        "dish_name": "daal puri",
+        "unit_type": "count",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "dal_makhani": {
+        "dish_name": "dal makhani",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "dal_tadka": {
+        "dish_name": "dal tadka",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "dharwad_pedha": {
+        "dish_name": "dharwad pedha",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "doodhpak": {
+        "dish_name": "doodhpak",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "double_ka_meetha": {
+        "dish_name": "double ka meetha",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "dum_aloo": {
+        "dish_name": "dum aloo",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "gajar_ka_halwa": {
+        "dish_name": "gajar ka halwa",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "gavvalu": {
+        "dish_name": "gavvalu",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "ghevar": {
+        "dish_name": "ghevar",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "gulab_jamun": {
+        "dish_name": "gulab jamun",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "imarti": {
+        "dish_name": "imarti",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "jalebi": {
+        "dish_name": "jalebi",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "kachori": {
+        "dish_name": "kachori",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "kadai_paneer": {
+        "dish_name": "kadai paneer",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "kadhi_pakoda": {
+        "dish_name": "kadhi pakoda",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "kajjikaya": {
+        "dish_name": "kajjikaya",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "kakinada_khaja": {
+        "dish_name": "kakinada khaja",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "kalakand": {
+        "dish_name": "kalakand",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "karela_bharta": {
+        "dish_name": "karela bharta",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "kofta": {
+        "dish_name": "kofta",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "kuzhi_paniyaram": {
+        "dish_name": "kuzhi paniyaram",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "lassi": {
+        "dish_name": "lassi",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "ledikeni": {
+        "dish_name": "ledikeni",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "litti_chokha": {
+        "dish_name": "litti chokha",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "lyangcha": {
+        "dish_name": "lyangcha",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "maach_jhol": {
+        "dish_name": "maach jhol",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "makki_di_roti_sarson_da_saag": {
+        "dish_name": "makki di roti sarson da saag",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "malapua": {
+        "dish_name": "malapua",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "misi_roti": {
+        "dish_name": "misi roti",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "misti_doi": {
+        "dish_name": "misti doi",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "modak": {
+        "dish_name": "modak",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "mysore_pak": {
+        "dish_name": "mysore pak",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "naan": {
+        "dish_name": "naan",
+        "unit_type": "count",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "navrattan_korma": {
+        "dish_name": "navrattan korma",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "palak_paneer": {
+        "dish_name": "palak paneer",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "paneer_butter_masala": {
+        "dish_name": "paneer butter masala",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "phirni": {
+        "dish_name": "phirni",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "pithe": {
+        "dish_name": "pithe",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "poha": {
+        "dish_name": "poha",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "poornalu": {
+        "dish_name": "poornalu",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "pootharekulu": {
+        "dish_name": "pootharekulu",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "qubani_ka_meetha": {
+        "dish_name": "qubani ka meetha",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "rabri": {
+        "dish_name": "rabri",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "rasgulla": {
+        "dish_name": "rasgulla",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "ras_malai": {
+        "dish_name": "ras malai",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "sandesh": {
+        "dish_name": "sandesh",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "shankarpali": {
+        "dish_name": "shankarpali",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "sheera": {
+        "dish_name": "sheera",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "sheer_korma": {
+        "dish_name": "sheer korma",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "shrikhand": {
+        "dish_name": "shrikhand",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "sohan_halwa": {
+        "dish_name": "sohan halwa",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "sohan_papdi": {
+        "dish_name": "sohan papdi",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "sutar_feni": {
+        "dish_name": "sutar feni",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    },
+    "unni_appam": {
+        "dish_name": "unni appam",
+        "unit_type": "weight",
+        "calories": 250,
+        "protein_g": 10,
+        "carbs_g": 30,
+        "fat_g": 10
+    }
+}
