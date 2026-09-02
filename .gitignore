@@ -1,0 +1,17 @@
+# Environments
+venv/
+env/
+.env
+__pycache__/
+*.pyc
+
+# Data
+data/*
+!data/nutrition_table.json
+
+# Streamlit
+.streamlit/credentials.toml
+
+# System files
+.DS_Store
+Thumbs.db

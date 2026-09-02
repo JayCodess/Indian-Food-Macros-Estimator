@@ -4,57 +4,13 @@ from PIL import Image
 from src.model_utils import FoodClassifier
 import pandas as pd
 
-st.set_page_config(page_title="Indian Food Macros Estimator", page_icon="🍛", layout="centered")
+st.set_page_config(page_title="Indian Food Macro Estimator", page_icon="🍛", layout="centered", initial_sidebar_state="collapsed")
 
-# --- Custom CSS for a premium look ---
+# Minimal CSS to keep radio buttons horizontally spaced nicely
 st.markdown("""
 <style>
-    .main {
-        background-color: #0E1117;
-        color: #FAFAFA;
-    }
-    .stButton>button {
-        background-color: #FF4B4B;
-        color: white;
-        border-radius: 8px;
-        border: none;
-        padding: 10px 24px;
-        transition: all 0.3s ease;
-    }
-    .stButton>button:hover {
-        background-color: #FF2B2B;
-        box-shadow: 0 4px 12px rgba(255, 75, 75, 0.4);
-    }
-    .metric-card {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-        border-radius: 12px;
-        padding: 20px;
-        margin: 10px 0px;
-        text-align: center;
-    }
-    .metric-value {
-        font-size: 2rem;
-        font-weight: 700;
-        color: #FF4B4B;
-    }
-    .metric-label {
-        font-size: 1rem;
-        color: #AAAAAA;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-    .confidence-bar {
-        height: 8px;
-        border-radius: 4px;
-        background-color: #333;
-        margin-top: 5px;
-        overflow: hidden;
-    }
-    .confidence-fill {
-        height: 100%;
-        background: linear-gradient(90deg, #FF4B4B, #FF8E53);
+    div[role="radiogroup"] {
+        gap: 0.5rem;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -79,102 +35,109 @@ def main():
     nutrition_db = load_nutrition_db()
     
     if classifier.model is None:
-        st.error("Model not found! Please ensure the model is trained and saved in the `models/` directory.")
+        st.error("Model not found! Please train the model first.")
         st.stop()
         
-    if not nutrition_db:
-        st.warning("Nutrition database is missing or empty. Macro calculations will not work.")
+    # --- Upload Section ---
+    with st.container(border=True):
+        st.markdown("### 📸 Upload your food")
+        source = st.radio("Source:", ["Upload Photo", "Take Picture"], horizontal=True, label_visibility="collapsed")
         
-    # Input options
-    source = st.radio("Choose image source:", ["Upload File", "Take Picture"], horizontal=True)
-    
-    img_file = None
-    if source == "Upload File":
-        img_file = st.file_uploader("Upload food image...", type=["jpg", "jpeg", "png"])
-    else:
-        img_file = st.camera_input("Take a picture")
+        img_file = None
+        if source == "Upload Photo":
+            img_file = st.file_uploader("Drop your image here", type=["jpg", "jpeg", "png"], label_visibility="collapsed")
+        else:
+            img_file = st.camera_input("Take a picture", label_visibility="collapsed")
         
+    # --- Results Section ---
     if img_file is not None:
         image = Image.open(img_file)
-        st.image(image, caption="Uploaded Image", use_column_width=True)
         
-        with st.spinner("Analyzing your food..."):
+        with st.expander("👁️ View Uploaded Image", expanded=False):
+            sub_col1, sub_col2, sub_col3 = st.columns([1, 4, 1])
+            with sub_col2:
+                st.image(image, use_column_width=True)
+                
+        with st.spinner("Analyzing spices and textures..."):
             is_confident, predictions = classifier.predict(image)
             
         if not predictions:
             st.error("Could not generate predictions.")
-            return
+            st.stop()
             
-        st.subheader("Classification Results")
-        
-        if not is_confident:
-            st.error(f"⚠️ I'm not confident this is a food I recognize. The top guess was {predictions[0]['dish'].title()} ({predictions[0]['confidence']*100:.1f}%), but this is too low.")
-            st.info("Try uploading a clearer photo of a single Indian dish.")
-            return
+        # --- Classification Results ---
+        with st.container(border=True):
+            st.markdown("### 🎯 What is this?")
             
-        # Display top 3
-        st.write("Here are my top guesses:")
-        for p in predictions:
-            dish = p['dish'].replace('_', ' ').title()
-            conf = p['confidence'] * 100
-            st.markdown(f"**{dish}**: {conf:.1f}%")
-            st.markdown(f"""
-                <div class="confidence-bar">
-                    <div class="confidence-fill" style="width: {conf}%"></div>
-                </div>
-            """, unsafe_allow_html=True)
-            
-        st.divider()
-        
-        # Serving Size & Macros (Use top-1 prediction)
-        top_dish = predictions[0]['dish']
-        top_dish_info = nutrition_db.get(top_dish)
-        
-        if top_dish_info:
-            st.subheader("Portion Size")
-            unit_type = top_dish_info.get("unit_type", "weight")
-            
-            entered_amount = 0
-            
-            if unit_type == "weight":
-                st.write("Select a preset serving size or enter exact grams:")
-                col1, col2, col3 = st.columns(3)
-                if col1.button("Small (150g)"): st.session_state.amount = 150
-                if col2.button("Medium (250g)"): st.session_state.amount = 250
-                if col3.button("Large (350g)"): st.session_state.amount = 350
+            if not is_confident:
+                st.warning(f"I'm not entirely sure! My best guess is {predictions[0]['dish'].replace('_', ' ').title()}, but I could be wrong.")
                 
-                entered_amount = st.number_input("Or enter exact grams:", min_value=1, value=st.session_state.get('amount', 250), step=10)
-                multiplier = entered_amount / 100.0
-                serving_text = f"{entered_amount}g"
+            for p in predictions:
+                dish = p['dish'].replace('_', ' ').title()
+                conf = p['confidence']
+                st.write(f"**{dish}** - {conf*100:.1f}%")
+                st.progress(float(conf))
                 
+            st.divider()
+            
+            # Dish confirmation
+            top3_options = [p['dish'].replace('_', ' ').title() for p in predictions]
+            options = top3_options + ["None of the above (Search manually)"]
+            
+            selected_option = st.selectbox("Confirm the correct dish to calculate macros:", options)
+            
+            all_classes = sorted(list(nutrition_db.keys()))
+            if selected_option == "None of the above (Search manually)":
+                all_classes_formatted = [c.replace('_', ' ').title() for c in all_classes]
+                manual_selection = st.selectbox("Search database:", all_classes_formatted)
+                selected_dish = all_classes[all_classes_formatted.index(manual_selection)]
             else:
-                st.write("Select a preset number of pieces or enter exact count:")
-                col1, col2, col3 = st.columns(3)
-                if col1.button("1 piece"): st.session_state.amount = 1
-                if col2.button("2 pieces"): st.session_state.amount = 2
-                if col3.button("3 pieces"): st.session_state.amount = 3
+                idx = options.index(selected_option)
+                selected_dish = predictions[idx]['dish']
                 
-                entered_amount = st.number_input("Or enter exact count:", min_value=1, value=st.session_state.get('amount', 1), step=1)
-                multiplier = entered_amount
-                serving_text = f"{entered_amount} pieces"
+        # --- Nutrition Calculator ---
+        top_dish_info = nutrition_db.get(selected_dish)
+    
+        if top_dish_info:
+            with st.container(border=True):
+                st.markdown(f"### ⚖️ Portion Size: {selected_dish.replace('_', ' ').title()}")
+                unit_type = top_dish_info.get("unit_type", "weight")
                 
-            st.subheader(f"Nutrition for {serving_text} of {top_dish.replace('_', ' ').title()}")
-            
-            cals = top_dish_info.get("calories", 0) * multiplier
-            prot = top_dish_info.get("protein_g", 0) * multiplier
-            carbs = top_dish_info.get("carbs_g", 0) * multiplier
-            fat = top_dish_info.get("fat_g", 0) * multiplier
-            
-            # Display Macros in a beautiful card layout
-            col1, col2, col3, col4 = st.columns(4)
-            with col1:
-                st.markdown(f'<div class="metric-card"><div class="metric-value">{int(cals)}</div><div class="metric-label">Calories</div></div>', unsafe_allow_html=True)
-            with col2:
-                st.markdown(f'<div class="metric-card"><div class="metric-value">{int(prot)}g</div><div class="metric-label">Protein</div></div>', unsafe_allow_html=True)
-            with col3:
-                st.markdown(f'<div class="metric-card"><div class="metric-value">{int(carbs)}g</div><div class="metric-label">Carbs</div></div>', unsafe_allow_html=True)
-            with col4:
-                st.markdown(f'<div class="metric-card"><div class="metric-value">{int(fat)}g</div><div class="metric-label">Fat</div></div>', unsafe_allow_html=True)
+                if unit_type == "weight":
+                    size_choice = st.radio("Select Serving Size:", ["Small (150g)", "Medium (250g)", "Large (350g)", "Custom"], horizontal=True)
+                    
+                    if size_choice == "Custom":
+                        entered_amount = st.number_input("Enter exact grams:", min_value=1, value=250, step=10)
+                    else:
+                        entered_amount = int(size_choice.split("(")[1].replace("g)", ""))
+                        
+                    multiplier = entered_amount / 100.0
+                    serving_text = f"{entered_amount}g"
+                else:
+                    size_choice = st.radio("Select Quantity:", ["1 piece", "2 pieces", "3 pieces", "Custom"], horizontal=True)
+                    
+                    if size_choice == "Custom":
+                        entered_amount = st.number_input("Enter exact pieces:", min_value=1, value=1, step=1)
+                    else:
+                        entered_amount = int(size_choice.split(" ")[0])
+                        
+                    multiplier = entered_amount
+                    serving_text = f"{entered_amount} piece{'s' if entered_amount > 1 else ''}"
+                    
+                cals = top_dish_info.get("calories", 0) * multiplier
+                prot = top_dish_info.get("protein_g", 0) * multiplier
+                carbs = top_dish_info.get("carbs_g", 0) * multiplier
+                fat = top_dish_info.get("fat_g", 0) * multiplier
+                
+                st.divider()
+                st.markdown(f"**Estimated Macros for {serving_text}**")
+                
+                # Use native Streamlit metrics
+                m_col1, m_col2, m_col3, m_col4 = st.columns(4)
+                m_col1.metric("Calories", f"{int(cals)}")
+                m_col2.metric("Protein", f"{int(prot)}g")
+                m_col3.metric("Carbs", f"{int(carbs)}g")
+                m_col4.metric("Fat", f"{int(fat)}g")
                 
         else:
             st.warning("Nutrition information for this dish is not available in our database.")

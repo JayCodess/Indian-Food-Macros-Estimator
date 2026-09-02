@@ -1,11 +1,7 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
 streamlit==1.38.0
 torch
 torchvision
 pandas
-kaggle
 Pillow
 numpy<2.0.0
-requests
-scikit-learn
-matplotlib
-seaborn
